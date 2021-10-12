@@ -4,6 +4,7 @@ import Header from './components/Header/Header';
 import Login from './components/Login/Login';
 import Main from './components/Main/Main';
 import Register from './components/Register/Register';
+import Shops from './components/Shops/Shops';
 
 
 function App() {
@@ -15,6 +16,9 @@ function App() {
         <Switch>
           <Route path="/" exact>
             <Main/>
+          </Route>
+          <Route path="/shop" >
+            <Shops/>
           </Route>
           <Route path="/login">
             <Login/>

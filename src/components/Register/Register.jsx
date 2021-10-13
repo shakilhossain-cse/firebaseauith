@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
@@ -22,7 +23,8 @@ export default function Register() {
                    <div className="mb-3">
                        <label htmlFor="exampleInputPassword1" className="form-label">Password</label>
                        <input type="password" className="form-control" id="exampleInputPassword1"/>
-                   </div>
+                        </div>
+                        <p>Already have a Account ? <Link to="login">Log in </Link></p>
                    <button type="submit" className="btn btn-primary w-100">Submit</button>
                    </form>
                </div>

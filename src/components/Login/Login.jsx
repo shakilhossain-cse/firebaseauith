@@ -1,8 +1,9 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
+import useFirebase from "../../hooks/useFirebase";
 
 export default function Login() {
-
+  const { signInUsingGoogle , signInUsingGithub } = useFirebase();
 
   return (
     <div
@@ -40,15 +41,16 @@ export default function Login() {
                 <i
                   className="fab fa-google pointer"
                   style={{ cursor: "pointer" }}
-                 
+                  onClick={signInUsingGoogle}
                 ></i>
-                <i className="fab fa-github" style={{ cursor: "pointer" }}></i>
+                <i className="fab fa-github" onClick={signInUsingGithub} style={{ cursor: "pointer" }}></i>
                 <i
                   className="fab fa-facebook"
                   style={{ cursor: "pointer" }}
                 ></i>
               </div>
             </div>
+            <p>Don't have a accout? <Link to="register">Create New One</Link></p>
             <button type="submit" className="btn btn-primary w-100">
               Submit
             </button>

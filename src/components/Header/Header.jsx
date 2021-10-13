@@ -1,9 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useFirebase from "../../hooks/useFirebase";
+
 
 export default function Header() {
-
-
+  const { User,logout } = useFirebase();
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-gray">
       <div className="container">
@@ -43,7 +44,9 @@ export default function Header() {
                 Register
               </Link>
             </li>
-             <button>log out</button>
+            {
+              User?.email &&  <button onClick={logout} >log out</button>
+            }
           </ul>
         </div>
       </div>
